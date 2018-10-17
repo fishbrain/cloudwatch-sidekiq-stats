@@ -1,0 +1,38 @@
+service:
+  name: cloudwatch-sidekiq-stats
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-plugin-optimize
+
+provider:
+  name: aws
+  memorySize: 128
+  runtime: nodejs8.10
+  region: eu-west-1
+  environment:
+    SIDEKIQ_URL: ${ssm:/cloudwatch-sidekiq-stats-${opt:stage, self:provider.stage}/sidekiq_url~true}
+    SIDEKIQ_PASSWORD: ${ssm:/cloudwatch-sidekiq-stats-${opt:stage, self:provider.stage}/sidekiq_password~true}
+    APP_NAME: ${ssm:/cloudwatch-sidekiq-stats-${opt:stage, self:provider.stage}/app_name~true}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - 'ssm:GetParametersByPath'
+      Resource:
+        - 'arn:aws:ssm:${self:provider.region}:*:parameter/cloudwatch-sidekiq-stats'
+    - Effect: Allow
+      Action:
+        - 'kms:Decrypt'
+      Resource:
+        - 'arn:aws:kms:${self:provider.region}:*:key/*'
+    - Effect: Allow
+      Action:
+        - 'cloudwatch:PutMetricData'
+      Resource:
+        - '*'
+
+functions:
+  main:
+    handler: index.handler
+    events:
+      - schedule: rate(1 minute)
