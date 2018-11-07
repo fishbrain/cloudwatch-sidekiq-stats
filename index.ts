@@ -1,5 +1,5 @@
 import { Callback, Context, Handler } from 'aws-lambda';
-import * as AWS from 'aws-sdk';
+import AWS from 'aws-sdk';
 import fetch from 'node-fetch';
 
 const cloudwatch = new AWS.CloudWatch();
@@ -36,6 +36,11 @@ export const handler: Handler = async (
   _context: Context,
   _callback: Callback | undefined,
 ) => {
+  if (sidekiqUrl === undefined) {
+    console.log('No SIDEKIQ_URL set');
+    return;
+  }
+
   const response = await fetch(sidekiqUrl, {
     headers: {
       Accept: 'application/json',

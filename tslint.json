@@ -1,7 +1,6 @@
 {
   "extends": ["tslint-config-fishbrain"],
   "rules": {
-    "import-name": [true, { "nodeFetch": "fetch" }],
     "no-this": true,
     "no-class": true
   }
