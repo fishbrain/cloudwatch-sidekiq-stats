@@ -15,7 +15,7 @@
     "aws-lambda-mock-context": "^3.2.1",
     "aws-sdk-mock": "^4.2.0",
     "jest": "^23.6.0",
-    "prettier": "^1.15.1",
+    "prettier": "^1.15.3",
     "serverless": "^1.34.1",
     "serverless-plugin-optimize": "^4.0.0-rc.1",
     "serverless-plugin-typescript": "^1.1.5",
