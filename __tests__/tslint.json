@@ -1,0 +1,9 @@
+{
+  "extends": ["tslint-config-fishbrain"],
+  "rules": {
+    "no-implicit-dependencies": [true, "dev"],
+    "no-object-mutation": false,
+    "no-this": true,
+    "no-class": true
+  }
+}
