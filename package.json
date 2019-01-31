@@ -11,7 +11,7 @@
     "@types/aws-lambda": "^8.10.18",
     "@types/jest": "^23.3.13",
     "@types/node": "^10.12.20",
-    "@types/node-fetch": "^2.1.4",
+    "@types/node-fetch": "^2.1.5",
     "aws-lambda-mock-context": "^3.2.1",
     "aws-sdk-mock": "^4.3.0",
     "jest": "^23.6.0",
