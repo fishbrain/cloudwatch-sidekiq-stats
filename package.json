@@ -16,7 +16,7 @@
     "aws-sdk-mock": "^4.3.0",
     "jest": "^23.6.0",
     "prettier": "^1.16.4",
-    "serverless": "^1.36.3",
+    "serverless": "^1.37.0",
     "serverless-plugin-optimize": "^4.0.0-rc.1",
     "serverless-plugin-typescript": "^1.1.5",
     "ts-jest": "^23.10.5",
