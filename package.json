@@ -10,7 +10,7 @@
   "devDependencies": {
     "@types/aws-lambda": "^8.10.25",
     "@types/jest": "^24.0.13",
-    "@types/node": "^12.0.1",
+    "@types/node": "^12.0.2",
     "@types/node-fetch": "^2.3.3",
     "aws-lambda-mock-context": "^3.2.1",
     "aws-sdk-mock": "^4.4.0",
