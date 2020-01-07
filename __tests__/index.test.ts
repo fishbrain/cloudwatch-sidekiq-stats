@@ -5,6 +5,7 @@ import { logMetric } from '../index';
 
 describe('logMetric', () => {
   it('it sends the metric to cloudwatch', async () => {
+    AWSMock.setSDKInstance(AWS);
     AWSMock.mock(
       'CloudWatch',
       'putMetricData',
@@ -19,5 +20,6 @@ describe('logMetric', () => {
     );
 
     await logMetric('Enqueued', 1);
+    AWSMock.restore('CloudWatch');
   });
 });
