@@ -1,10 +1,10 @@
-import * as context from 'aws-lambda-mock-context';
 import * as AWS from 'aws-sdk';
 import * as AWSMock from 'aws-sdk-mock';
-import { handler, logMetric } from '../index';
+
+import { logMetric } from '../index';
 
 describe('logMetric', () => {
-  it('it sends the metric to cloudwatch', () => {
+  it('it sends the metric to cloudwatch', async () => {
     AWSMock.mock(
       'CloudWatch',
       'putMetricData',
@@ -18,6 +18,6 @@ describe('logMetric', () => {
       },
     );
 
-    logMetric('Enqueued', 1);
+    await logMetric('Enqueued', 1);
   });
 });
