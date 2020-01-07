@@ -36,7 +36,10 @@
   "eslintConfig": {
     "extends": [
       "eslint-config-fishbrain-base"
-    ]
+    ],
+    "rules": {
+      "@typescript-eslint/explicit-function-return-type": "off"
+    }
   },
   "scripts": {
     "test": "eslint --ext ts,js . && jest",
