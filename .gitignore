@@ -63,3 +63,4 @@ typings/
 # Serverless
 .serverless
 .build
+/dist

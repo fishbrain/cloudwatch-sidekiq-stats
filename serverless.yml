@@ -2,8 +2,15 @@ service:
   name: cloudwatch-sidekiq-stats
 
 plugins:
-  - serverless-plugin-typescript
-  - serverless-plugin-optimize
+  - serverless-scriptable-plugin
+
+custom:
+  scriptHooks:
+    before:package:createDeploymentArtifacts: npm run build
+
+package:
+  exclude:
+    - node_modules/aws-sdk/**
 
 provider:
   name: aws
@@ -33,6 +40,6 @@ provider:
 
 functions:
   main:
-    handler: index.handler
+    handler: dist/index.handler
     events:
       - schedule: rate(1 minute)

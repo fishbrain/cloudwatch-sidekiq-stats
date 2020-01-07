@@ -19,8 +19,7 @@
     "jest": "^24.9.0",
     "prettier": "^1.19.1",
     "serverless": "^1.60.5",
-    "serverless-plugin-optimize": "^4.0.0-rc.1",
-    "serverless-plugin-typescript": "^1.1.9",
+    "serverless-scriptable-plugin": "^1.0.5",
     "ts-jest": "^24.2.0",
     "typescript": "^3.7.4"
   },
@@ -40,7 +39,8 @@
     ]
   },
   "scripts": {
-    "test": "eslint --ext ts,js . && jest"
+    "test": "eslint --ext ts,js . && jest",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
