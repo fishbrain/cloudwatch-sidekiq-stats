@@ -14,14 +14,14 @@
     "@types/node-fetch": "^2.5.4",
     "aws-lambda-mock-context": "^3.2.1",
     "aws-sdk-mock": "^5.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-fishbrain-base": "^1.1.0",
     "jest": "^24.9.0",
     "prettier": "^1.19.1",
     "serverless": "^1.60.5",
     "serverless-plugin-optimize": "^4.0.0-rc.1",
     "serverless-plugin-typescript": "^1.1.9",
     "ts-jest": "^24.2.0",
-    "tslint": "^5.20.1",
-    "tslint-config-fishbrain": "^4.1.0",
     "typescript": "^3.7.4"
   },
   "prettier": {
@@ -31,8 +31,16 @@
   "jest": {
     "preset": "ts-jest"
   },
+  "eslintIgnore": [
+    "dist"
+  ],
+  "eslintConfig": {
+    "extends": [
+      "eslint-config-fishbrain-base"
+    ]
+  },
   "scripts": {
-    "test": "tslint --project . && jest"
+    "test": "eslint --ext ts,js . && jest"
   },
   "repository": {
     "type": "git",
