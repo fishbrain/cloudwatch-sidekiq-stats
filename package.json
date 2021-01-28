@@ -4,7 +4,7 @@
   "description": "Lambda function to fetch Sidekiq stats and put them in CloudWatch",
   "main": "index.ts",
   "dependencies": {
-    "aws-sdk": "^2.598.0",
+    "aws-sdk": "^2.832.0",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
